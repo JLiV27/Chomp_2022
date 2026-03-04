@@ -4,6 +4,9 @@ public class MyChomp {
 
     public int sBoards;
     public int workBoards;
+    public int[] xBoards = new int[20];
+    public int[] yBoards = new int[20];
+    public int[] zBoards = new int[20];
 
     public int x;
     public int y;
@@ -42,8 +45,19 @@ public class MyChomp {
 
         for (int i = 0; i < sBoards; i++) {
 
+            while((pBoards - ((x * 100) + (y * 10))) >= 0){
+                zBoards[i] = pBoards - 1;
+            }
+            while((pBoards - (x * 100))/10 >= 0){
+                yBoards[i] = pBoards - 1;
+            }
+            while(pBoards/100 >= 1){
+                xBoards[i] = pBoards - 1;
+            }
+
+
             if(x >= y && x >= z && y >= z && x != 0){
-                System.out.println("Subsequent Board " + i + ": " + (x * 100) + (y * 10) + z);
+                System.out.println("Subsequent Board: " + i + ": " + (x * 100) + (y * 10) + z);
             }
         }
 
