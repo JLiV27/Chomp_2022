@@ -3,7 +3,7 @@ public class MyChomp {
     public int[] boards = new int[20];
 
     public int sBoards;
-    public int workBoards;
+    public int[] workBoards = new int[9];
     public int[] xBoards = new int[20];
     public int[] yBoards = new int[20];
     public int[] zBoards = new int[20];
@@ -29,13 +29,11 @@ public class MyChomp {
                 }
             }
         }
-//        for (int i = 0; i < boards.length; i++) {
-//            PossibleBoards(boards[i]);
-//        }
-        PossibleBoards(boards[0]);
+
+        PossibleBoards(333);
     }
 
-    public int PossibleBoards(int pBoards){
+    public void PossibleBoards(int pBoards){
 
         x = pBoards/100;
         y = (pBoards - (x * 100))/10;
@@ -45,22 +43,25 @@ public class MyChomp {
 
         for (int i = 0; i < sBoards; i++) {
 
-            while((pBoards - ((x * 100) + (y * 10))) >= 0){
-                zBoards[i] = pBoards - 1;
+            while((pBoards - ((x * 100) + (y * 10))) >= 1){
+                pBoards--;
+                zBoards[i] = pBoards;
+                System.out.println("CHECK Z: " + zBoards[i]);
             }
-            while((pBoards - (x * 100))/10 >= 0){
-                yBoards[i] = pBoards - 1;
+            while((pBoards - (x * 100))/10 >= 1){
+                pBoards = pBoards - 10;
+                yBoards[i] = pBoards;
+                System.out.println("CHECK Y: " + yBoards[i]);
             }
-            while(pBoards/100 >= 1){
-                xBoards[i] = pBoards - 1;
-            }
-
-
-            if(x >= y && x >= z && y >= z && x != 0){
-                System.out.println("Subsequent Board: " + i + ": " + (x * 100) + (y * 10) + z);
+            while(pBoards/100 >= 2){
+                pBoards = pBoards - 100;
+                xBoards[i] = pBoards;
+                System.out.println("CHECK X: " + xBoards[i]);
             }
         }
 
-        return pBoards;
+        for (int i = 0; i < sBoards; i++) {
+            System.out.println("Subsequent Board " + i + ": " + workBoards[i]);
+        }
     }
 }
