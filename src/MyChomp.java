@@ -3,10 +3,8 @@ public class MyChomp {
     public int[] boards = new int[20];
 
     public int sBoards;
-    public int[] workBoards = new int[9];
-    public int[] xBoards = new int[20];
-    public int[] yBoards = new int[20];
-    public int[] zBoards = new int[20];
+    public int bNum;
+    public int[] aBoards = new int[20];
 
     public int x;
     public int y;
@@ -45,23 +43,23 @@ public class MyChomp {
 
             while((pBoards - ((x * 100) + (y * 10))) >= 1){
                 pBoards--;
-                zBoards[i] = pBoards;
-                System.out.println("CHECK Z: " + zBoards[i]);
+                aBoards[bNum] = pBoards;
+                bNum++;
             }
             while((pBoards - (x * 100))/10 >= 1){
                 pBoards = pBoards - 10;
-                yBoards[i] = pBoards;
-                System.out.println("CHECK Y: " + yBoards[i]);
+                aBoards[bNum] = pBoards;
+                bNum++;
             }
             while(pBoards/100 >= 2){
                 pBoards = pBoards - 100;
-                xBoards[i] = pBoards;
-                System.out.println("CHECK X: " + xBoards[i]);
+                aBoards[bNum] = pBoards;
+                bNum++;
             }
         }
 
-        for (int i = 0; i < sBoards; i++) {
-            System.out.println("Subsequent Board " + i + ": " + workBoards[i]);
+        for (int i = 0; i < (sBoards - 1); i++) {
+            System.out.println("Subsequent Board " + (i +  1) + ": " + aBoards[i]);
         }
     }
 }
