@@ -28,7 +28,7 @@ public class MyChomp {
             }
         }
 
-        PossibleBoards(333);
+        PossibleBoards(222);
     }
 
     public void PossibleBoards(int pBoards){
