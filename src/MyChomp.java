@@ -4,7 +4,10 @@ public class MyChomp {
 
     public int sBoards;
     public int bNum;
-    public int[] aBoards = new int[20];
+    public int[] aBoards = new int[40];
+    public boolean oPass;
+    public boolean tPass;
+    public boolean hPass;
 
     public int x;
     public int y;
@@ -28,7 +31,7 @@ public class MyChomp {
             }
         }
 
-        PossibleBoards(222);
+        PossibleBoards(333);
     }
 
     public void PossibleBoards(int pBoards){
@@ -41,17 +44,29 @@ public class MyChomp {
 
         for (int i = 0; i < sBoards; i++) {
 
-            while((pBoards - ((x * 100) + (y * 10))) >= 1){
+            while((pBoards - ((x * 100) + (y * 10))) >= 1 && !oPass){//ones place
                 pBoards--;
                 aBoards[bNum] = pBoards;
                 bNum++;
+                oPass = true;
             }
-            while((pBoards - (x * 100))/10 >= 1){
+
+            if(oPass && (pBoards - ((x * 100) + (y * 10))) >= 1){
+            pBoards = (x * 100) + (y * 10) + z;
+            }
+
+            while((pBoards - (x * 100))/10 >= 1){//tens place
                 pBoards = pBoards - 10;
                 aBoards[bNum] = pBoards;
                 bNum++;
+                tPass = true;
             }
-            while(pBoards/100 >= 2){
+
+            if(tPass && (pBoards - (x * 100))/10 >= 1) {
+                pBoards = (x * 100) + (y * 10) + z;
+            }
+
+            while(pBoards/100 >= 2){//hundreds place
                 pBoards = pBoards - 100;
                 aBoards[bNum] = pBoards;
                 bNum++;
@@ -59,6 +74,7 @@ public class MyChomp {
         }
 
         for (int i = 0; i < (sBoards - 1); i++) {
+            //if((aBoards[bNum]/100) >= (aBoards[bNum]) - (x * 100))/10; && (aBoards[bNum]/100) >= z && y >= z && (aBoards[bNum]/100) != 0)
             System.out.println("Subsequent Board " + (i +  1) + ": " + aBoards[i]);
         }
     }
