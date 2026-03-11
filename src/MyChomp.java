@@ -74,8 +74,9 @@ public class MyChomp {
         }
 
         for (int i = 0; i < (sBoards - 1); i++) {
-            //if((aBoards[bNum]/100) >= (aBoards[bNum]) - (x * 100))/10; && (aBoards[bNum]/100) >= z && y >= z && (aBoards[bNum]/100) != 0)
+            {
             System.out.println("Subsequent Board " + (i +  1) + ": " + aBoards[i]);
+          }
         }
     }
 }
