@@ -7,7 +7,10 @@ public class MyChomp {
     public int[] aBoards = new int[40];
     public boolean oPass;
     public boolean tPass;
-    public boolean hPass;
+
+    A_BoardClass ABC = new A_BoardClass(3,3,3);
+
+    public A_BoardClass[] bClass = new A_BoardClass[20];
 
     public int x;
     public int y;
@@ -23,8 +26,8 @@ public class MyChomp {
                 for (int z = 3; z >= 0; z--) {
                    if(x >= y && x >= z && y >= z && x != 0){
                        assert false;
-                       boards[id] = (x * 100) + (y * 10) + z;
-                    System.out.println(boards[id] + ", id: " + id);
+                       bClass[id] = new A_BoardClass(x,y,z);
+                    bClass[id].PrintInfo();
                     id++;
                     }
                 }
