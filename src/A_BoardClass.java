@@ -21,6 +21,6 @@ public class A_BoardClass {
     }
 
     public void PrintInfo(){
-        System.out.println((x) + (y) + (z));
+        System.out.println((x*100) + (y*10) + (z));
     }
 }
