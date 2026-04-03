@@ -39,7 +39,9 @@ public class MyChomp {
 
     public void PossibleBoards(){
         for (int i = 0; i < bClass.length; i++) {
-            aClass[i].z = bClass[i].z--;
+            bClass[i].z = aClass[i].z - 1;
+            bClass[i].y = aClass[i].y - 1;
+            bClass[i].x = aClass[i].x - 1;
         }
     }
 }
