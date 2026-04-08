@@ -1,22 +1,10 @@
 public class MyChomp {
     public int id = 1;
-    public int[] boards = new int[20];
-
-    public int sBoards;
-    public int bNum;
-    public int oVal;
-    public int[] aBoards = new int[40];
-    public boolean oPass;
-    public boolean tPass;
 
     A_BoardClass ABC = new A_BoardClass(3,3,3);
 
     public A_BoardClass[] bClass = new A_BoardClass[20];
     public A_BoardClass[] aClass = new A_BoardClass[20];
-
-    public int x;
-    public int y;
-    public int z;
 
     public static void main(String[] args) {
         new MyChomp();
@@ -35,18 +23,17 @@ public class MyChomp {
                 }
             }
         }
+        //for (int i = 1; i < bClass.length; i++) {
+            PossibleBoards(bClass[1]);        }
 
-    }
+    //}
 
-    public void PossibleBoards(){
-        for (int i = 0; i < bClass.length; i++) {
-            oVal = aClass[i].x;
-            aClass[i].z = bClass[i].z - 1;
-            if(aClass[i].z == bClass[i].z - 1){
-                aClass[i].y = bClass[i].y - 1;
-                aClass[i].x = bClass[i].x - 1;
-                }
-            aClass[i].x = oVal;
+    public void PossibleBoards(A_BoardClass board){
+            while(board.z > 0){
+            board.z--;
+            System.out.println("Board: " + (board.x * 100 + board.y * 10 + board.z));
             }
-        }
+            board.y--;
+            board.z--;
     }
+}
