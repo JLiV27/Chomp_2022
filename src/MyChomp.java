@@ -4,6 +4,7 @@ public class MyChomp {
 
     public int sBoards;
     public int bNum;
+    public int oVal;
     public int[] aBoards = new int[40];
     public boolean oPass;
     public boolean tPass;
@@ -39,11 +40,13 @@ public class MyChomp {
 
     public void PossibleBoards(){
         for (int i = 0; i < bClass.length; i++) {
+            oVal = aClass[i].x;
             aClass[i].z = bClass[i].z - 1;
             if(aClass[i].z == bClass[i].z - 1){
                 aClass[i].y = bClass[i].y - 1;
                 aClass[i].x = bClass[i].x - 1;
                 }
+            aClass[i].x = oVal;
             }
         }
     }
