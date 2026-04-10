@@ -25,27 +25,40 @@ public class MyChomp {
             }
         }
         //for (int i = 1; i < bClass.length; i++) {
-            PossibleBoards(bClass[1]);        }
+            PossibleBoards(bClass[8]);
+    }
 
     //}
 
     public void PossibleBoards(A_BoardClass board){
             oBoard = board.x * 100 + board.y * 10 + board.z;
+        System.out.println("ORIGINAL BOARD: " + board.x + board.y + board.z);
         while(board.z > 0){
             board.z--;
-
+            System.out.println("Board1: " + (board.x * 100 + board.y * 10 + board.z));
             }
             board.x = oBoard/100;
-            board.y = oBoard/10;
-            board.z = oBoard - ((board.x * 100) + (board.y * 10));
-        System.out.println(("Board.Y: " + (333 - (board.x * 100))/10));
-        System.out.println("Original: " + oBoard);
-        System.out.println("Reset: " + (board.x * 100 + board.y * 10 + board.z));
-            while(board.y > 0) {
+            board.y = (oBoard/10)/10;
+            board.z = (oBoard - ((board.x * 100) + (board.y * 10)));
+            while(board.y > 0 && board.z > 0) {
+                if(board.z == board.y){
+                    board.z--;
+                }
                 board.y--;
-                board.z--;
-                System.out.println("Board: " + (board.x * 100 + board.y * 10 + board.z));
-                System.out.println(board.y);
+                System.out.println("Board2: " + (board.x * 100 + board.y * 10 + board.z));
             }
+        board.x = oBoard/100;
+        board.y = (oBoard/10)/10;
+        board.z = (oBoard - ((board.x * 100) + (board.y * 10)));
+        while(board.x > 1 && board.y > 0 && board.z > 0){
+            if(board.y == board.z){
+                board.z--;
+            }
+            if(board.x == board.y){
+                board.y--;
+            }
+            board.x--;
+            System.out.println("Board3: " + (board.x * 100 + board.y * 10 + board.z));
+        }
     }
 }
