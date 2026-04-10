@@ -1,5 +1,6 @@
 public class MyChomp {
     public int id = 1;
+    public int oBoard;
 
     A_BoardClass ABC = new A_BoardClass(3,3,3);
 
@@ -29,11 +30,22 @@ public class MyChomp {
     //}
 
     public void PossibleBoards(A_BoardClass board){
-            while(board.z > 0){
+            oBoard = board.x * 100 + board.y * 10 + board.z;
+        while(board.z > 0){
             board.z--;
-            System.out.println("Board: " + (board.x * 100 + board.y * 10 + board.z));
+
             }
-            board.y--;
-            board.z--;
+            board.x = oBoard/100;
+            board.y = oBoard/10;
+            board.z = oBoard - ((board.x * 100) + (board.y * 10));
+        System.out.println(("Board.Y: " + (333 - (board.x * 100))/10));
+        System.out.println("Original: " + oBoard);
+        System.out.println("Reset: " + (board.x * 100 + board.y * 10 + board.z));
+            while(board.y > 0) {
+                board.y--;
+                board.z--;
+                System.out.println("Board: " + (board.x * 100 + board.y * 10 + board.z));
+                System.out.println(board.y);
+            }
     }
 }
