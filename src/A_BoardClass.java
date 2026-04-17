@@ -13,6 +13,7 @@ public class A_BoardClass {
             x = boards[i]/100;
             y = (boards[i] - (x * 100))/10;
             z = boards[i] - ((x * 100) + (y * 10));
+            System.out.println(x + y + z);
         }
 
         x = pX;
