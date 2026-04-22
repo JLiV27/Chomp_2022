@@ -24,11 +24,11 @@ public class MyChomp {
                 }
             }
         }
-        //for (int i = 1; i < bClass.length; i++) {
-        PossibleBoards(bClass[3]);
+        for (int i = 1; i < bClass.length; i++) {
+        PossibleBoards(bClass[i]);
     }
 
-    //}
+    }
 
     public void PossibleBoards(A_BoardClass board) {
         oBoard = board.x * 100 + board.y * 10 + board.z;
@@ -52,7 +52,12 @@ public class MyChomp {
         board.z = oBoard - ((board.x * 100) + (board.y * 10));
         while (board.x > 1 && board.y > 0) {
                 board.x--;
-                board.y--;
+                if(board.x - board.y >= 1 || board.x < board.y){
+                    board.y--;
+                }
+                if(board.y < board.z){
+                    board.z--;
+                }
                 System.out.println("Board3: " + (board.x * 100 + board.y * 10 + board.z));
         }
     }
