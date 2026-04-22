@@ -25,7 +25,7 @@ public class MyChomp {
             }
         }
         //for (int i = 1; i < bClass.length; i++) {
-        PossibleBoards(bClass[6]);
+        PossibleBoards(bClass[3]);
     }
 
     //}
