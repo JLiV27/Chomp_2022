@@ -62,14 +62,16 @@ public class MyChomp {
             }
 
             System.out.println("Board3: " + (board.x * 100 + board.y * 10 + board.z));
-            WinLose((board.x * 100 + board.y * 10 + board.z));
+            WinLose((board.x * 100 + board.y * 10 + board.z), 100);
         }
     }
 
-    public void WinLose(int board) {
+    public void WinLose(int board, int oBoard) {
         if (board == 100) {
             System.out.println("Lose");
-
+        if(oBoard == 100){
+            System.out.println("Lose");
+        }
         }
     }
 }
