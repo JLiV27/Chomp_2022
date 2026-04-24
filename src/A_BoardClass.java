@@ -5,6 +5,7 @@ public class A_BoardClass {
     public int x;
     public int y;
     public int z;
+    public boolean isLose;
     public int nextX;
     public int nextY;
 

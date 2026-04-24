@@ -36,7 +36,7 @@ public class MyChomp {
         while (board.z > 0) {
             board.z--;
             System.out.println("Board1: " + (board.x * 100 + board.y * 10 + board.z));
-            WinLose((board.x * 100 + board.y * 10 + board.z));
+            WinLose((board.x * 100 + board.y * 10 + board.z), oBoard);
         }
         board.x = oBoard / 100;
         board.y = (oBoard - (board.x * 100)) / 10;
@@ -47,7 +47,7 @@ public class MyChomp {
             }
             board.y--;
             System.out.println("Board2: " + (board.x * 100 + board.y * 10 + board.z));
-            WinLose((board.x * 100 + board.y * 10 + board.z));
+            WinLose((board.x * 100 + board.y * 10 + board.z), oBoard);
         }
         board.x = oBoard / 100;
         board.y = (oBoard - (board.x * 100)) / 10;
@@ -62,16 +62,18 @@ public class MyChomp {
             }
 
             System.out.println("Board3: " + (board.x * 100 + board.y * 10 + board.z));
-            WinLose((board.x * 100 + board.y * 10 + board.z), 100);
+            WinLose((board.x * 100 + board.y * 10 + board.z), oBoard);
         }
     }
 
     public void WinLose(int board, int oBoard) {
         if (board == 100) {
             System.out.println("Lose");
-        if(oBoard == 100){
-            System.out.println("Lose");
         }
+            for (int i = 0; i < aClass.length; i++) {
+                if(oBoard == (aClass[i].x * 100 + aClass[i].y * 10 + aClass[i].z)){
+
+                }
+            }
         }
     }
-}
