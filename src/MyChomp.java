@@ -61,7 +61,7 @@ public class MyChomp {
             board.y--;
             System.out.println("Board2: " + (board.x * 100 + board.y * 10 + board.z)); //finds next move by subtracting in the tens place
             if(board.x == 1 && board.y == 0 && board.z == 0){
-                System.out.println("found loose board");
+                System.out.println("found lose board");
                 foundLose = true;
             }
            // WinLose((board.x * 100 + board.y * 10 + board.z), startBoard);
