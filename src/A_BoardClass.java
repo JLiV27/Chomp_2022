@@ -9,7 +9,7 @@ public class A_BoardClass {
     public int nextX;
     public int nextY;
 
-    public A_BoardClass(int pX, int pY, int pZ) {
+    public A_BoardClass(int pX, int pY, int pZ, boolean pIsLose) {
         for (int i = 0; i < boards.length; i++) {
             x = boards[i]/100;
             y = (boards[i] - (x * 100))/10;
@@ -19,9 +19,10 @@ public class A_BoardClass {
         x = pX;
         y = pY;
         z = pZ;
+        isLose = pIsLose;
     }
 
     public void PrintInfo(){
-        System.out.println((x*100) + (y*10) + (z));
+        System.out.println("oBoard: " + x + "" + y + "" + z + " Stat: " + isLose);
     }
 }
